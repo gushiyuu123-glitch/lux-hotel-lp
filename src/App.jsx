@@ -30,7 +30,6 @@ import LobbySP from "./components/sections/LobbySP";
 import CtaMinimalPC from "./components/sections/CtaMinimalPC";
 import CtaMinimalSP from "./components/sections/CtaMinimalSP";
 
-
 import Footer from "./components/layout/Footer";
 import FooterSP from "./components/layout/FooterSP";
 
@@ -41,7 +40,7 @@ export default function App() {
   return (
     <div className="min-h-screen w-full bg-white text-neutral-900">
 
-      {/* ========== HEADER ========== */}
+      {/* ======================= HEADER ======================= */}
       <div className="hidden md:block">
         <HeaderNavPC />
       </div>
@@ -49,7 +48,7 @@ export default function App() {
         <HeaderSP />
       </div>
 
-      {/* ========== HERO ========== */}
+      {/* ======================= HERO ======================= */}
       <div className="hidden md:block">
         <HeroPC />
       </div>
@@ -57,83 +56,102 @@ export default function App() {
         <HeroSP />
       </div>
 
-      {/* ========== CONCEPT ========== */}
-      <div className="hidden md:block">
-        <ConceptPC />
-      </div>
-      <div className="block md:hidden">
-        <ConceptSP />
-      </div>
-
-      {/* ========== ROOMS ========== */}
-      <div className="hidden md:block">
-        <RoomsPC />
-      </div>
-      <div className="block md:hidden">
-        <RoomsSP />
-      </div>
-
-      {/* ========== FACILITIES ========== */}
-      <div className="hidden md:block">
-        <FacilitiesPC />
-      </div>
-      <div className="block md:hidden">
-        <FacilitiesSP />
-      </div>
-
-      {/* ========== DINING ========== */}
-      <div className="hidden md:block">
-        <DiningPC />
-      </div>
-      <div className="block md:hidden">
-        <DiningSP />
-      </div>
-
-      {/* ========== SPA（PCのみ） ========== */}
-      <div className="hidden md:block">
-        <SpaPC />
-      </div>
+      {/* ======================= CONCEPT ======================= */}
+      <section id="concept">
+        <div className="hidden md:block">
+          <ConceptPC />
+        </div>
         <div className="block md:hidden">
-        <SpaSP />
-      </div>
+          <ConceptSP />
+        </div>
+      </section>
 
-      {/* ========== POOL（PCのみ） ========== */}
-      <div className="hidden md:block">
-        <PoolPC />
-      </div>
+      {/* ======================= ROOMS ======================= */}
+      <section id="rooms">
+        <div className="hidden md:block">
+          <RoomsPC />
+        </div>
         <div className="block md:hidden">
-        <PoolSP />
-      </div>
+          <RoomsSP />
+        </div>
+      </section>
 
-      {/* ========== NIGHT BAR（PCのみ） ========== */}
-      <div className="hidden md:block">
-        <NightBarPC />
-      </div>
+      {/* ======================= FACILITIES ======================= */}
+      <section id="facilities">
+        <div className="hidden md:block">
+          <FacilitiesPC />
+        </div>
         <div className="block md:hidden">
-        <NightBarSP />
-      </div>
+          <FacilitiesSP />
+        </div>
+      </section>
 
-      {/* ========== LOBBY（PCのみ） ========== */}
-      <div className="hidden md:block">
-        <LobbyPC />
-      </div>
+      {/* ======================= DINING ======================= */}
+      <section id="dining">
+        <div className="hidden md:block">
+          <DiningPC />
+        </div>
         <div className="block md:hidden">
-        <LobbySP />
-      </div>
+          <DiningSP />
+        </div>
+      </section>
 
-      {/* ========== CTA MINIMAL（PCのみ） ========== */}
-      <div className="hidden md:block">
-        <CtaMinimalPC />
-      </div>
+      {/* ======================= SPA ======================= */}
+      <section id="spa">
+        <div className="hidden md:block">
+          <SpaPC />
+        </div>
         <div className="block md:hidden">
-        <CtaMinimalSP />
-      </div>
+          <SpaSP />
+        </div>
+      </section>
 
-      {/* ========== FOOTER（共通） ========== */}
+      {/* ======================= POOL ======================= */}
+      <section id="pool">
+        <div className="hidden md:block">
+          <PoolPC />
+        </div>
+        <div className="block md:hidden">
+          <PoolSP />
+        </div>
+      </section>
+
+      {/* ======================= BAR ======================= */}
+      <section id="bar">
+        <div className="hidden md:block">
+          <NightBarPC />
+        </div>
+        <div className="block md:hidden">
+          <NightBarSP />
+        </div>
+      </section>
+
+      {/* ======================= LOBBY ======================= */}
+      <section id="lobby">
+        <div className="hidden md:block">
+          <LobbyPC />
+        </div>
+        <div className="block md:hidden">
+          <LobbySP />
+        </div>
+      </section>
+
+      {/* ======================= CTA ======================= */}
+      <section id="reserve">
+        <div className="hidden md:block">
+          <CtaMinimalPC />
+        </div>
+        <div className="block md:hidden">
+          <CtaMinimalSP />
+        </div>
+      </section>
+
+      {/* ======================= FOOTER ======================= */}
       <Footer />
       <div className="block md:hidden">
         <FooterSP />
-</div>
+      </div>
+
     </div>
   );
 }
