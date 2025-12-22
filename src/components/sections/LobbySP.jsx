@@ -13,7 +13,7 @@ export default function LobbySP() {
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => e.isIntersecting && setActive(true),
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
     if (rootRef.current) obs.observe(rootRef.current);
     return () => obs.disconnect();
@@ -26,69 +26,67 @@ export default function LobbySP() {
     if (!active || !imgRef.current) return;
 
     gsap.to(imgRef.current, {
-      y: -12,
-      duration: 6,
+      y: -16,
+      duration: 7,
       ease: "sine.inOut",
-      yoyo: true,
       repeat: -1,
+      yoyo: true,
     });
   }, [active]);
 
   /* ------------------------------------
-     ボケ粒子
+     ボケ粒子（背景レイヤー）
   ------------------------------------- */
   const BOKEHS = [
-    { left: "12%", top: "24%" },
-    { left: "70%", top: "18%" },
-    { left: "28%", top: "60%" },
-    { left: "78%", top: "58%" },
-    { left: "48%", top: "78%" },
+    { left: "15%", top: "30%" },
+    { left: "75%", top: "25%" },
+    { left: "25%", top: "70%" },
+    { left: "75%", top: "65%" },
   ];
 
   return (
     <section
       ref={rootRef}
       className="
-        block md:hidden
-        w-full
-        pt-[140px] pb-[160px]
+        block md:hidden w-full
+        pt-[100px] pb-[140px]
         relative overflow-hidden
         text-white
-        bg-[linear-gradient(180deg,#02040a_0%,#060b15_40%,#0b1428_100%)]
+        bg-[linear-gradient(180deg,#02040a_0%,#060b15_45%,#0b1428_100%)]
       "
     >
       {/* ──────────────────────────────
-          ボケ粒子（青ネオン）
+          背景ネオン粒子（大画面用に散らす）
       ────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0 z-[1]">
         {BOKEHS.map((pos, i) => (
           <div
             key={i}
             className="
-              absolute w-[70px] h-[70px]
+              absolute
+              w-[90px] h-[90px]
               rounded-full
-              bg-[rgba(70,120,255,0.28)]
-              blur-[20px]
-              opacity-[0.55]
+              bg-[rgba(80,130,255,0.28)]
+              blur-[26px] opacity-[0.5]
             "
             style={{
               left: pos.left,
               top: pos.top,
-              animation: `lobbyFloat ${6 + i * 1.5}s ease-in-out infinite`,
+              animation: `lobbyFloat ${7 + i * 1.3}s ease-in-out infinite`,
             }}
           />
         ))}
       </div>
 
       {/* ──────────────────────────────
-          タイトル
+          タイトル（中央寄せ）
       ────────────────────────────── */}
-      <div className="relative w-[90%] mx-auto z-[3]">
+      <div className="relative w-[88%] mx-auto text-center z-[3] mb-10">
         <p
           className={`
-            text-[11px] tracking-[0.32em] text-white/40 mb-6
+            text-[11px] tracking-[0.32em] text-white/40 mb-4
             transition-all duration-[1100ms]
-            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
           `}
         >
           LOBBY LOUNGE
@@ -96,11 +94,10 @@ export default function LobbySP() {
 
         <h2
           className={`
-            text-[26px] leading-[1.75] font-light mb-14
-            drop-shadow-[0_4px_24px_rgba(0,80,200,0.45)]
-            tracking-[0.18em]
+            text-[26px] leading-[1.65] font-light 
+            drop-shadow-[0_4px_22px_rgba(20,90,200,0.45)]
             transition-all duration-[1250ms]
-            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
           `}
         >
           静けさが美しくなる  
@@ -109,51 +106,47 @@ export default function LobbySP() {
       </div>
 
       {/* ──────────────────────────────
-          ロビー画像（メインアート）
+          ロビー写真（ワイドフル表示）
       ────────────────────────────── */}
-      <div className="relative w-[90%] mx-auto z-[2]">
+      <div className="relative w-full z-[2]">
         <figure
           className={`
-            w-full aspect-[4/5]
-            rounded-[12px] overflow-hidden
-            shadow-[0_30px_100px_rgba(0,40,120,0.55)]
+            w-full h-[72vh]        /* 画面の7割の高さを使う */
+            overflow-hidden
             transition-all duration-[1200ms]
-            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
           `}
         >
-          {/* 青 × 金 ネオンベール */}
+          {/* 青 × 金ネオンベール（画面いっぱい） */}
           <div
             className="
-              pointer-events-none absolute inset-0
-              bg-[radial-gradient(circle_at_30%_20%,rgba(70,120,255,0.30),rgba(0,0,0,0)_65%),
-                 radial-gradient(circle_at_75%_80%,rgba(255,180,110,0.28),rgba(0,0,0,0)_70%)]
-              mix-blend-soft-light
-              opacity-[0.85]
+              absolute inset-0 pointer-events-none
+              bg-[radial-gradient(circle_at_30%_20%,rgba(80,130,255,0.28),rgba(0,0,0,0)_65%),
+                 radial-gradient(circle_at_75%_80%,rgba(255,190,140,0.25),rgba(0,0,0,0)_70%)]
+              mix-blend-soft-light opacity-[0.85]
             "
           />
 
           <img
             ref={imgRef}
             src="/hotel/lobby/lobby-main.png"
-            alt="Hotel lobby"
             className="
               w-full h-full object-cover
-              brightness-[1.06]
-              transition-all duration-[1400ms]
+              brightness-[1.08]
             "
           />
         </figure>
       </div>
 
       {/* ──────────────────────────────
-          説明文
+          説明文（余白大 → 呼吸）
       ────────────────────────────── */}
-      <div className="relative w-[90%] mx-auto z-[3] mt-12 px-1">
+      <div className="relative w-[88%] mx-auto z-[3] mt-12">
         <p
           className={`
             text-[14px] leading-[1.9] text-white/75
             transition-all duration-[1300ms]
-            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+            ${active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
           `}
         >
           夜の気配がゆっくりと広がるロビー。  
@@ -165,14 +158,14 @@ export default function LobbySP() {
   );
 }
 
-/* ===========================
-   浮遊アニメーション Keyframes
-=========================== */
+/* -----------------------------------------
+   浮遊アニメ Keyframes
+------------------------------------------ */
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes lobbyFloat {
-  0%   { transform: translateY(0px) translateX(0px); }
+  0%   { transform: translateY(0) translateX(0); }
   50%  { transform: translateY(-18px) translateX(10px); }
-  100% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(0) translateX(0); }
 }`;
 document.head.appendChild(style);
