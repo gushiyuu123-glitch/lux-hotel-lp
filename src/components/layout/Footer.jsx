@@ -1,5 +1,4 @@
 // src/components/layout/Footer.jsx
-// src/components/layout/Footer.jsx
 
 export default function Footer() {
   return (
@@ -7,19 +6,19 @@ export default function Footer() {
       className="
         hidden md:block
         w-full
-        bg-[#f8f8f8]               /* ★ 白 → ほんの少し黒寄せ */
+        bg-[#f8f8f8]
         border-t border-[#d2d2d2]/60
         pt-[110px] pb-[120px]
         relative
       "
     >
-      {/* ▼ Dior 黄金の縦光（黒寄せ背景で少し濃く） */}
+      {/* ▼ Dior 黄金の縦光 */}
       <div
         className="
           absolute inset-y-0 left-[50%]
           w-[1px]
           bg-gradient-to-b
-          from-[rgba(255,214,150,0.22)]  /* ★ 少し濃く */
+          from-[rgba(255,214,150,0.22)]
           via-[rgba(255,214,150,0.09)]
           to-transparent
           pointer-events-none
@@ -33,7 +32,7 @@ export default function Footer() {
           className="
             text-[22px]
             tracking-[0.32em]
-            text-[#0a0a0a]/90           /* ★ インクブラック寄せ */
+            text-[#0a0a0a]/90
             font-light
             mb-14
             select-none
@@ -97,18 +96,31 @@ export default function Footer() {
             © 2025 BLUE SHORE HOTEL
           </p>
 
-          <p className="text-[12px] text-neutral-600 tracking-[0.22em] select-none">
+          {/* ▼ GUSHIKEN DESIGN — リンク版 */}
+          <a
+            href="https://gushikendesign.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              text-[12px]
+              tracking-[0.22em]
+              text-neutral-600
+              hover:text-neutral-900
+              transition-all
+              select-none
+            "
+          >
             Designed by GUSHIKEN DESIGN
-          </p>
+          </a>
         </div>
       </div>
 
-      {/* ▼ Dior系 黒反射光：ほんの少しだけ強調 */}
+      {/* ▼ Dior系 黒反射光 */}
       <div
         className="
           absolute bottom-0 left-0 w-full h-[50px]
           bg-gradient-to-t
-          from-[rgba(0,0,0,0.12)]   /* ★ 黒寄せ */
+          from-[rgba(0,0,0,0.12)]
           to-transparent
           pointer-events-none
         "

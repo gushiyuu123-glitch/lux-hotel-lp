@@ -1,13 +1,107 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-        <!-- Google翻訳を完全無効化 -->
+
+    <!-- Disable Google Translate -->
     <meta name="google" content="notranslate" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lux-hotel-lp</title>
+
+    <!-- =======================
+         Primary SEO
+    ======================== -->
+    <title>Blue Shore Hotel | 青と光が整う、静かな高級リゾート</title>
+
+    <meta
+      name="description"
+      content="Blue Shore Hotel（ブルーショアホテル）は、海と光が調和する静かな高級リゾート。客室・ダイニング・スパ・プール・バー・ロビーなど、沖縄の海風に包まれた上質な滞在をご提供します。"
+    />
+
+    <link rel="canonical" href="https://lux-hotel-lp.vercel.app/" />
+
+    <meta name="robots" content="index, follow" />
+
+    <!-- =======================
+         Open Graph / SNS
+    ======================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Blue Shore Hotel" />
+    <meta
+      property="og:title"
+      content="Blue Shore Hotel | 青と光が整う、静かな高級リゾート"
+    />
+    <meta
+      property="og:description"
+      content="海と光が調和する静かな上質リゾート。客室、ダイニング、スパ、プールなど、穏やかな滞在を演出する高品質ホテルサイト。"
+    />
+    <meta
+      property="og:image"
+      content="https://lux-hotel-lp.vercel.app/ogp/blueshore_hotel.png"
+    />
+    <meta property="og:url" content="https://lux-hotel-lp.vercel.app/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Blue Shore Hotel | 青と光が整う、静かな高級リゾート"
+    />
+    <meta
+      name="twitter:description"
+      content="沖縄の海と光に包まれる、静かで優しい時間を提供する高級リゾートホテル。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://lux-hotel-lp.vercel.app/ogp/blueshore_hotel.png"
+    />
+
+    <!-- =======================
+         JSON-LD (Hotel + WebSite)
+    ======================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Blue Shore Hotel",
+      "url": "https://lux-hotel-lp.vercel.app/",
+      "image": "https://lux-hotel-lp.vercel.app/ogp/blueshore_hotel.png",
+      "description": "海と光が調和する静かな上質リゾートホテル。客室・ダイニング・スパ・プール・バー・ロビーなど、幅広い施設と静けさに包まれた滞在空間が魅力。",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "Okinawa"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Seaside Rooms" },
+        { "@type": "LocationFeatureSpecification", "name": "Spa & Relaxation" },
+        { "@type": "LocationFeatureSpecification", "name": "Infinity Pool" },
+        { "@type": "LocationFeatureSpecification", "name": "Ocean Dining" }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Blue Shore Hotel Official Site",
+      "url": "https://lux-hotel-lp.vercel.app/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GUSHIKEN DESIGN"
+      }
+    }
+    </script>
+
+    <!-- =======================
+         Favicon
+    ======================== -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

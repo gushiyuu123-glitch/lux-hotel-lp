@@ -6,13 +6,13 @@ export default function FooterSP() {
       className="
         block md:hidden
         w-full
-        bg-[#f8f8f8]           /* 柔白：ホテルロビーの白壁 */
+        bg-[#f8f8f8]
         border-t border-[#d2d2d2]/60
         pt-[80px] pb-[90px]
         relative
       "
     >
-      {/* ▼ ゴールド縦光（SP用に薄く） */}
+      {/* ▼ ゴールド縦光（SPは薄く） */}
       <div
         className="
           absolute inset-y-0 left-[50%]
@@ -93,13 +93,25 @@ export default function FooterSP() {
             © 2025 BLUE SHORE HOTEL
           </p>
 
-          <p className="text-[11px] text-neutral-600 tracking-[0.22em]">
+          {/* ▼ GUSHIKEN DESIGN リンク版（SP） */}
+          <a
+            href="https://gushikendesign.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              text-[11px]
+              tracking-[0.22em]
+              text-neutral-600
+              hover:text-neutral-900
+              transition-all
+            "
+          >
             Designed by GUSHIKEN DESIGN
-          </p>
+          </a>
         </div>
       </div>
 
-      {/* ▼ 下部の黒反射光（上品さだけ残す） */}
+      {/* ▼ 下部の黒反射光 */}
       <div
         className="
           absolute bottom-0 left-0 w-full h-[42px]
